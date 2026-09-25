@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>主题风格演示 · QQ 加群引导前台</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;900&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<header class="site-bar">
+  <div class="site-bar-inner">
+    <div class="site-title">
+      <span class="site-dot"></span>
+      <div>
+        <h1>主题风格演示</h1>
+        <p>QQ 加群引导 · 前台效果</p>
+      </div>
+    </div>
+    <div class="view-toggle" role="tablist" aria-label="视图">
+      <button type="button" class="view-btn active" data-view="single" role="tab" aria-selected="true">单个预览</button>
+      <button type="button" class="view-btn" data-view="grid" role="tab" aria-selected="false">全部对比</button>
+    </div>
+  </div>
+</header>
+
+<main class="site-main">
+  <section id="single-view" class="view-panel">
+    <div class="theme-tabs" id="theme-tabs" role="tablist" aria-label="主题"></div>
+    <div class="single-layout">
+      <div class="frame-shell">
+        <div class="frame-notch"></div>
+        <div class="frame" id="single-frame" data-theme="oled"></div>
+      </div>
+      <aside class="token-panel">
+        <h2 id="token-name">深色 OLED</h2>
+        <p id="token-desc" class="token-desc"></p>
+        <div class="swatches" id="swatches"></div>
+        <div class="token-list" id="token-list"></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="grid-view" class="view-panel" hidden>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<template id="mock-tpl">
+  <div class="demo-app">
+    <div class="demo-bg"></div>
+    <div class="demo-wrap">
+      <header class="demo-header">
+        <div class="demo-logo">Q</div>
+        <h1 class="demo-title">QQ 加群引导</h1>
+        <p class="demo-sub">输入卡密即可获取全部官方群入口</p>
+      </header>
+
+      <div class="demo-notice">请选择状态正常的群加入，群满或维护中的群暂不可用。</div>
+
+      <section class="demo-card demo-gate">
+        <h2 class="demo-gate-title">卡密验证</h2>
+        <p class="demo-gate-tip">请输入管理员发放的卡密，验证成功后即可查看加群列表。</p>
+        <div class="demo-gate-form">
+          <input class="demo-input" type="text" value="VIP-9F3K2A7Q" readonly aria-label="卡密">
+          <button class="demo-btn" type="button">立即验证</button>
+        </div>
+        <p class="demo-msg">验证成功，正在进入...</p>
+      </section>
+
+      <section class="demo-list">
+        <div class="demo-list-head">
+          <h2>官方群列表</h2>
+          <span class="demo-count">3 个群</span>
+        </div>
+
+        <div class="demo-group is-on">
+          <div class="demo-avatar">官</div>
+          <div class="demo-main">
+            <div class="demo-gname">官方交流群</div>
+            <div class="demo-gno">群号：123456789</div>
+          </div>
+          <span class="demo-status on">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            可加入 · 102ms
+          </span>
+        </div>
+
+        <div class="demo-group is-on">
+          <div class="demo-avatar">V</div>
+          <div class="demo-main">
+            <div class="demo-gname">VIP 高级交流群</div>
+            <div class="demo-gno">群号：888999000</div>
+          </div>
+          <span class="demo-status on">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            可加入 · 146ms
+          </span>
+        </div>
+
+        <div class="demo-group is-off">
+          <div class="demo-avatar">新</div>
+          <div class="demo-main">
+            <div class="demo-gname">新手互助群</div>
+            <div class="demo-gno">群号：987654321</div>
+          </div>
+          <span class="demo-status off">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            不可用
+          </span>
+        </div>
+      </section>
+
+      <footer class="demo-footer">© 2026 QQ 加群引导</footer>
+    </div>
+  </div>
+</template>
+
+<script src="demo.js"></script>
+</body>
+</html>
